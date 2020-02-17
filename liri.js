@@ -65,13 +65,6 @@ if (operation == "spotify-this-song") {
 } else if (operation == "movie-this") {
     axios.get("http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=trilogy"
     ).then(function (response) {
-        // console.log(response.data.Title);
-        // console.log(response.data.Year);
-        // console.log(response.data.Rated);
-        // console.log(response.data.Country);
-        // console.log(response.data.Language);
-        // console.log(response.data.Plot);
-        // console.log(response.data.Actors);
         let results;
         if (response.data.Title == undefined) {
             results = "PROBABLY NO RESULTS EY?!";
