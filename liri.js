@@ -21,7 +21,11 @@ var spotify = new spot({
 var input = process.argv.slice(3).join(" ");
 var operation = process.argv[2];
 moment().format();
+//var command = process.argv[0] + " " + process.argv[1] + " " + process.argv[2] + " ";
+var command = process.argv[2] + " ";
+appendFileLogs(command, input);
 
+//console.log("COMMAND : " + process.argv.slice(0).join(" "))
 console.log("USER INPUT : " + input);
 
 if (operation == "spotify-this-song") {
@@ -119,3 +123,9 @@ if (operation == "spotify-this-song") {
     console.log("ENTER A VALID COMMAND");
 }
 
+function appendFileLogs(bread, cheese) {
+    //fs.appendFile('logs.txt', bread + input + ",", function (err) {
+    fs.appendFile('logs.txt', "node liri " + bread + input + ",", function (err) {
+        if (err) throw err;
+    });
+}
